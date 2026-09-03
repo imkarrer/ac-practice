@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-03T23:38:07+00:00",
+  "updated": "2026-09-03T23:39:19+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
       "name": "Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
-      "sessionStarted": "2026-09-03T23:29:22+00:00",
+      "sessionStarted": "2026-09-03T23:39:19+00:00",
       "allTime": [
         {
           "guid": "76561199441943807",
@@ -96,30 +96,14 @@
           "at": "2026-09-03T02:13:19+00:00"
         }
       ],
-      "session": [
-        {
-          "guid": "76561198014952506",
-          "name": "Von Stryker",
-          "car": "tbb_toyota_gr86_premium",
-          "carName": "Toyota GR86 Premium",
-          "ms": 446190,
-          "at": "2026-09-03T23:38:07+00:00"
-        }
-      ],
-      "online": [
-        {
-          "guid": "76561198014952506",
-          "name": "Von Stryker",
-          "car": "tbb_toyota_gr86_premium",
-          "carName": "Toyota GR86 Premium"
-        }
-      ]
+      "session": [],
+      "online": []
     },
     "brainerd-competition": {
       "id": "brainerd-competition",
       "name": "Practice \u2014 Brainerd Competition",
       "track": "brainerd-competition",
-      "sessionStarted": "2026-09-03T23:29:20+00:00",
+      "sessionStarted": "2026-09-03T23:39:18+00:00",
       "allTime": [],
       "session": [],
       "online": []
@@ -128,7 +112,7 @@
       "id": "brainerd-donnybrooke",
       "name": "Practice \u2014 Brainerd Donnybrooke",
       "track": "brainerd-donnybrooke",
-      "sessionStarted": "2026-09-03T23:29:21+00:00",
+      "sessionStarted": "2026-09-03T23:39:18+00:00",
       "allTime": [
         {
           "guid": "76561199441943807",
