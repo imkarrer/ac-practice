@@ -1,12 +1,19 @@
 {
-  "updated": "2026-09-03T23:26:03+00:00",
+  "updated": "2026-09-03T23:26:45+00:00",
   "lobbies": {
     "dev-blackhawk": {
       "id": "dev-blackhawk",
       "name": "[DEV] Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
-      "sessionStarted": "2026-09-03T23:26:03+00:00",
-      "online": [],
+      "sessionStarted": "2026-09-03T23:26:38+00:00",
+      "online": [
+        {
+          "guid": "76561197961983498",
+          "name": "fugazy",
+          "car": "abarth_124_2016",
+          "carName": "Abarth 124 Spider EC P1"
+        }
+      ],
       "allTime": [],
       "session": []
     }
