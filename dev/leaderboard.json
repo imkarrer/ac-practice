@@ -1,5 +1,14 @@
 {
-  "updated": null,
-  "lobbies": {}
+  "updated": "2026-09-03T02:31:46+00:00",
+  "lobbies": {
+    "dev-blackhawk": {
+      "id": "dev-blackhawk",
+      "name": "[DEV] Practice \u2014 Blackhawk Farms",
+      "track": "blackhawk",
+      "sessionStarted": "2026-09-03T02:21:58+00:00",
+      "online": [],
+      "allTime": [],
+      "session": []
+    }
+  }
 }
-
