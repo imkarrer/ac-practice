@@ -1,4 +1,143 @@
 {
-  "updated": null,
-  "lobbies": {}
+  "updated": "2026-09-03T02:31:57+00:00",
+  "lobbies": {
+    "blackhawk": {
+      "id": "blackhawk",
+      "name": "Practice \u2014 Blackhawk Farms",
+      "track": "blackhawk",
+      "sessionStarted": "2026-09-03T02:28:32+00:00",
+      "allTime": [
+        {
+          "guid": "76561199441943807",
+          "name": "Herb",
+          "car": "pc_civic",
+          "carName": "Honda Civic Type-R (FK8)",
+          "ms": 76987,
+          "at": "2026-09-02T03:47:54+00:00"
+        },
+        {
+          "guid": "76561198042662616",
+          "name": "Cysterion",
+          "car": "pc_civic",
+          "carName": "Honda Civic Type-R (FK8)",
+          "ms": 78106,
+          "at": "2026-09-03T01:18:20+00:00"
+        },
+        {
+          "guid": "76561198014952506",
+          "name": "Von Stryker",
+          "car": "pc_civic",
+          "carName": "Honda Civic Type-R (FK8)",
+          "ms": 81339,
+          "at": "2026-09-03T01:14:32+00:00"
+        },
+        {
+          "guid": "76561199441943807",
+          "name": "Herb",
+          "car": "lotus_elise_sc",
+          "carName": "Lotus Elise SC",
+          "ms": 81471,
+          "at": "2026-09-01T22:51:38+00:00"
+        },
+        {
+          "guid": "76561198014952506",
+          "name": "Von Stryker",
+          "car": "lotus_elise_sc",
+          "carName": "Lotus Elise SC",
+          "ms": 82593,
+          "at": "2026-09-02T01:31:12+00:00"
+        },
+        {
+          "guid": "76561199441943807",
+          "name": "Herb",
+          "car": "abarth_124_2016",
+          "carName": "Abarth 124 Spider EC P1",
+          "ms": 83096,
+          "at": "2026-09-01T22:38:34+00:00"
+        },
+        {
+          "guid": "76561198042662616",
+          "name": "Cysterion",
+          "car": "tbb_toyota_gr86_premium",
+          "carName": "Toyota GR86 Premium",
+          "ms": 83687,
+          "at": "2026-09-03T02:05:20+00:00"
+        },
+        {
+          "guid": "76561197961983498",
+          "name": "fugazy",
+          "car": "abarth_124_2016",
+          "carName": "Abarth 124 Spider EC P1",
+          "ms": 84191,
+          "at": "2026-09-02T02:36:32+00:00"
+        },
+        {
+          "guid": "76561198014952506",
+          "name": "Von Stryker",
+          "car": "tbb_toyota_gr86_premium",
+          "carName": "Toyota GR86 Premium",
+          "ms": 84898,
+          "at": "2026-09-03T02:19:10+00:00"
+        },
+        {
+          "guid": "76561198014952506",
+          "name": "Von Stryker",
+          "car": "bmw_m3_e30",
+          "carName": "BMW M3 E30",
+          "ms": 86494,
+          "at": "2026-09-03T01:48:35+00:00"
+        },
+        {
+          "guid": "76561197961983498",
+          "name": "fugazy",
+          "car": "tbb_toyota_gr86_premium",
+          "carName": "Toyota GR86 Premium",
+          "ms": 89794,
+          "at": "2026-09-03T02:13:19+00:00"
+        }
+      ],
+      "session": [],
+      "online": [
+        {
+          "guid": "76561198042662616",
+          "name": "Cysterion",
+          "car": "tbb_toyota_gr86_premium",
+          "carName": "Toyota GR86 Premium"
+        },
+        {
+          "guid": "76561198014952506",
+          "name": "Von Stryker",
+          "car": "tbb_toyota_gr86_premium",
+          "carName": "Toyota GR86 Premium"
+        }
+      ]
+    },
+    "brainerd-competition": {
+      "id": "brainerd-competition",
+      "name": "Practice \u2014 Brainerd Competition",
+      "track": "brainerd-competition",
+      "sessionStarted": "2026-09-03T02:28:30+00:00",
+      "allTime": [],
+      "session": [],
+      "online": []
+    },
+    "brainerd-donnybrooke": {
+      "id": "brainerd-donnybrooke",
+      "name": "Practice \u2014 Brainerd Donnybrooke",
+      "track": "brainerd-donnybrooke",
+      "sessionStarted": "2026-09-03T02:28:30+00:00",
+      "allTime": [
+        {
+          "guid": "76561199441943807",
+          "name": "Herb",
+          "car": "lotus_elise_sc",
+          "carName": "Lotus Elise SC",
+          "ms": 114831,
+          "at": "2026-09-02T04:04:54+00:00"
+        }
+      ],
+      "session": [],
+      "online": []
+    }
+  }
 }
