@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T23:29:22+00:00",
+  "updated": "2026-09-03T23:30:34+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -97,7 +97,14 @@
         }
       ],
       "session": [],
-      "online": []
+      "online": [
+        {
+          "guid": "76561198014952506",
+          "name": "Von Stryker",
+          "car": "tbb_toyota_gr86_premium",
+          "carName": "Toyota GR86 Premium"
+        }
+      ]
     },
     "brainerd-competition": {
       "id": "brainerd-competition",
