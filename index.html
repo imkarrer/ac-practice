@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How to join</title>
+  <title>Practice</title>
   <style>
     :root { color-scheme: dark; }
     body {
@@ -24,7 +24,7 @@
     a { color: #f66; }
     a.btn {
       display: inline-block;
-      background: #c00;
+      background: #185;
       color: #fff;
       text-decoration: none;
       font-weight: 700;
@@ -32,29 +32,12 @@
       border-radius: 4px;
       margin: 0.25rem 0.4rem 0.25rem 0;
     }
-    a.btn:hover { background: #e00; }
-    a.btn.secondary { background: #333; }
-    a.btn.secondary:hover { background: #444; }
-    a.btn.join { background: #185; }
-    a.btn.join:hover { background: #1a7; }
-    a.btn.join.empty { background: #185; }
-    a.btn.join.empty:hover { background: #1a7; }
-    a.btn.join.busy { background: #a60; }
-    a.btn.join.busy:hover { background: #c70; }
+    a.btn:hover { background: #1a7; }
+    a.btn.busy { background: #a60; }
+    a.btn.busy:hover { background: #c70; }
     .live { font-size: 0.85rem; font-weight: 600; margin-left: 0.45rem; }
     .live.empty { color: #6b6; }
     .live.busy { color: #ec6; }
-    ol, ul { padding-left: 1.25rem; }
-    li { margin: 0.35rem 0; }
-    code { background: #000; padding: 0.1rem 0.35rem; border-radius: 3px; }
-    p.note { color: #888; }
-    .callout {
-      background: #1a1a1a;
-      border-left: 4px solid #185;
-      padding: 0.75rem 1rem;
-      margin: 0 0 1rem;
-    }
-    .callout.warn { border-left-color: #c80; }
     .downloads { margin: 0.75rem 0 0.25rem; }
     .board { margin: 0 0 1.4rem; overflow-x: auto; }
     table.laps {
@@ -80,72 +63,18 @@
 </head>
 <body>
   <main>
-    <h1>How to join</h1>
-    <p class="sub">Always-on practice. Pickup, no server password. Content Manager only — the stock launcher cannot download mods.</p>
-
-    <div class="callout warn">
-      <strong>Whitelist.</strong>
-      Send the server admin your Steam ID (Steam64, the 17-digit number on your Steam profile) before you try to join. You will be refused until you are on the list.
-    </div>
-
-    <div class="callout warn">
-      <strong>Install content before you join.</strong>
-      Content Manager can auto-download only the <strong>124 Spider</strong> from this server. You must install Custom Shaders Patch, the GR86, the Civic FK8, and this lobby’s track from the links below first. The NA Miata, Elise SC, and BMW M3 E30 are in the base game.
-    </div>
+    <h1>Practice</h1>
+    <p class="sub">Whitelist your Steam ID, then <a href="https://github.com/gro-ove/actools/releases/latest">Content Manager</a> → Join → Download missing content. Green = empty. Amber = someone is in.</p>
 
     <div class="downloads">
       <a class="btn join" data-lobby="blackhawk" data-label="Join Blackhawk" href="https://acstuff.ru/s/q:race/online/join?ip=167.237.13.200&amp;httpPort=8081">Join Blackhawk</a>
       <a class="btn join" data-lobby="brainerd-competition" data-label="Join Competition" href="https://acstuff.ru/s/q:race/online/join?ip=167.237.13.200&amp;httpPort=8082">Join Competition</a>
       <a class="btn join" data-lobby="brainerd-donnybrooke" data-label="Join Donnybrooke" href="https://acstuff.ru/s/q:race/online/join?ip=167.237.13.200&amp;httpPort=8083">Join Donnybrooke</a>
     </div>
-    <p class="note">Green = empty, safe to restart. Amber = someone is in — wait. Need Content Manager? <a href="https://github.com/gro-ove/actools/releases/latest">Content Manager Lite</a> (~8 MB). Extract somewhere permanent, run it, point it at your Steam <code>assettocorsa</code> folder.</p>
-    <div class="callout warn">
-      <strong>Custom Shaders Patch is required</strong> for the GR86 and Civic FK8.
-      Install <a href="https://acstuff.club/patch/">Custom Shaders Patch</a> (0.2.11) via Content Manager <strong>before</strong> you join. Stock AC will crash on those cars.
-    </div>
 
     <h2>Leaderboard</h2>
-    <p class="sub">Best valid lap per driver and car. Cuts do not count. All-time survives the 24-hour session loop. Live status updates every ~30–60s.</p>
     <p id="board-stamp" class="stamp"></p>
     <div id="boards"><p class="muted">Loading times…</p></div>
-
-    <h2>Steps</h2>
-    <ol>
-      <li>Send the server admin your Steam ID, then install Assetto Corsa and <a href="https://github.com/gro-ove/actools/releases/latest">Content Manager</a>.</li>
-      <li>Install <a href="https://acstuff.club/patch/">Custom Shaders Patch</a>. Restart CM.</li>
-      <li>Install the cars and track you need from <strong>Required downloads</strong> below (OverTake / AssettoWorld login may be required).</li>
-      <li>Click a green Join button (or Drive → Online and search <code>Practice —</code>).</li>
-      <li>On the lobby page, click <strong>Download missing content</strong> if the 124 is still missing. Do not join until installs finish.</li>
-      <li>Content → Cars → pick a 124, GR86, Civic FK8, NA Miata, Elise SC, or E30 livery. On the 124, use <strong>Bianco</strong> for white, not Owner White. Civic default is Championship White.</li>
-      <li>Back on the lobby page, Join.</li>
-    </ol>
-
-    <h2>If Join fails</h2>
-    <ul>
-      <li><strong>Connection refused / kicked immediately:</strong> you are not on the whitelist. Send the admin your Steam ID.</li>
-      <li><strong>Checksum failed:</strong> delete that car folder under <code>content\cars\</code> (124, GR86, or Civic), reinstall from the links below or Download missing content for the 124.</li>
-      <li><strong>GR86 / Civic crash on load:</strong> you do not have CSP. Install it from the link above, restart CM, try again.</li>
-      <li><strong>Missing track:</strong> install Gray Ghost (Blackhawk) or Brainerd from OverTake before joining that lobby.</li>
-      <li>Restart Content Manager after a download if the car or track does not show up.</li>
-    </ul>
-
-    <h2>Required downloads</h2>
-    <p>Install these in Content Manager before joining. Tracks are large; one Brainerd download covers both layouts.</p>
-    <div class="downloads">
-      <a class="btn secondary" href="https://acstuff.club/patch/">Custom Shaders Patch</a>
-      <a class="btn secondary" href="https://github.com/imkarrer/ac-practice/releases/download/content/abarth_124_2016.zip">124 Spider (server build)</a>
-      <a class="btn secondary" href="https://www.assettoworld.com/car/toyota-gr86-premium">GR86 Premium</a>
-      <a class="btn secondary" href="https://www.assettoworld.com/car/honda-civic-type-r-fk8-5">Civic Type-R FK8</a>
-      <a class="btn secondary" href="https://www.overtake.gg/downloads/gray-ghost-trail.80813/">Gray Ghost (Blackhawk)</a>
-      <a class="btn secondary" href="https://www.overtake.gg/downloads/brainerd-international-raceway.42674/">Brainerd (both layouts)</a>
-    </div>
-
-    <h2>Rules</h2>
-    <ul>
-      <li>124 Spider EC P1, Toyota GR86 Premium, Honda Civic Type-R FK8, Mazda Miata NA, Lotus Elise SC, or BMW M3 E30</li>
-      <li>Practice, 24-hour loop, pickup</li>
-      <li>ABS and TC on; stability off; autoclutch off; no tyre blankets</li>
-    </ul>
   </main>
   <script>
     function formatTime(ms) {
