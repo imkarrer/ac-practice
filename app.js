@@ -19,30 +19,69 @@ function el(tag, attrs, children) {
   return node;
 }
 
-function emptyRow(text) {
+const RANK_KEY = "ac-rank-mode";
+const RANK_HINTS = {
+  all: "Every car on one list — fastest lap wins.",
+  car: "Positions restart for each car, so a Civic isn't racing a 124.",
+};
+
+let lastBoard = null;
+
+function rankMode() {
+  try {
+    return localStorage.getItem(RANK_KEY) === "all" ? "all" : "car";
+  } catch (err) {
+    return "car";
+  }
+}
+
+function setRankMode(mode) {
+  const next = mode === "all" ? "all" : "car";
+  try {
+    localStorage.setItem(RANK_KEY, next);
+  } catch (err) {}
+  syncRankToggle();
+  if (lastBoard) renderBoard(lastBoard);
+}
+
+function syncRankToggle() {
+  const mode = rankMode();
+  document.querySelectorAll("[data-rank]").forEach(function (btn) {
+    const on = btn.getAttribute("data-rank") === mode;
+    btn.classList.toggle("on", on);
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  const hint = document.getElementById("board-hint");
+  if (hint) hint.textContent = RANK_HINTS[mode];
+}
+
+function emptyRow(text, cols) {
   const tr = el("tr");
-  const td = el("td", { colspan: "4", class: "muted" }, [text]);
+  const td = el("td", { colspan: String(cols || 4), class: "muted" }, [text]);
   tr.appendChild(td);
   return tr;
 }
 
-function lapTable(rows, emptyText) {
+function lapTable(rows, emptyText, opts) {
+  const showCar = !!(opts && opts.showCar);
+  const labels = showCar ? ["#", "Driver", "Car", "Steam ID", "Time"] : ["#", "Driver", "Steam ID", "Time"];
   const table = el("table", { class: "laps" });
   const thead = el("thead");
   const hr = el("tr");
-  ["#", "Driver", "Steam ID", "Time"].forEach(function (label) {
+  labels.forEach(function (label) {
     hr.appendChild(el("th", null, [label]));
   });
   thead.appendChild(hr);
   table.appendChild(thead);
   const tbody = el("tbody");
   if (!rows || !rows.length) {
-    tbody.appendChild(emptyRow(emptyText));
+    tbody.appendChild(emptyRow(emptyText, labels.length));
   } else {
     rows.forEach(function (row, i) {
       const tr = el("tr");
       tr.appendChild(el("td", { class: "pos" }, [String(i + 1)]));
       tr.appendChild(el("td", null, [row.name || "—"]));
+      if (showCar) tr.appendChild(el("td", null, [row.carName || row.car || "—"]));
       const guid = row.guid || "";
       const steam = guid
         ? el("a", { class: "steam", href: "https://steamcommunity.com/profiles/" + guid, target: "_blank", rel: "noopener" }, [guid])
@@ -103,6 +142,20 @@ function carMeta(group) {
   return bits.join(" · ");
 }
 
+function renderMixedBoards(allTime, session) {
+  const wrap = el("div", { class: "mixed-boards" });
+  wrap.appendChild(el("h4", null, ["All-time"]));
+  wrap.appendChild(lapTable(allTime, "No valid laps yet.", { showCar: true }));
+  wrap.appendChild(el("h4", null, ["This session"]));
+  wrap.appendChild(lapTable(session, "No valid laps this session.", { showCar: true }));
+  return wrap;
+}
+
+function renderLobbyTimes(lobby) {
+  if (rankMode() === "all") return renderMixedBoards(lobby.allTime, lobby.session);
+  return renderCarBoards(lobby.allTime, lobby.session);
+}
+
 function renderCarBoards(allTime, session) {
   const wrap = el("div", { class: "car-boards" });
   const groups = groupByCar(allTime, session);
@@ -160,10 +213,12 @@ function renderJoins(data) {
 }
 
 function renderBoard(data) {
+  lastBoard = data;
   const root = document.getElementById("boards");
   const stamp = document.getElementById("board-stamp");
   root.textContent = "";
-  stamp.textContent = data.updated ? "Updated " + data.updated.replace("T", " ").replace("+00:00", " UTC") : "";
+  if (stamp) stamp.textContent = data.updated ? "Updated " + data.updated.replace("T", " ").replace("+00:00", " UTC") : "";
+  syncRankToggle();
   renderJoins(data);
   const lobbies = data.lobbies || {};
   const ids = practiceIds(lobbies);
@@ -179,7 +234,7 @@ function renderBoard(data) {
     const live = el("span", { class: "live " + (online.length ? "busy" : "empty") }, [onlineLabel(online)]);
     heading.appendChild(live);
     wrap.appendChild(heading);
-    wrap.appendChild(renderCarBoards(lobby.allTime, lobby.session));
+    wrap.appendChild(renderLobbyTimes(lobby));
     root.appendChild(wrap);
   });
 }
@@ -197,5 +252,11 @@ async function loadBoard() {
   }
 }
 
+document.querySelectorAll("[data-rank]").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    setRankMode(btn.getAttribute("data-rank"));
+  });
+});
+syncRankToggle();
 loadBoard();
 setInterval(loadBoard, 15000);
