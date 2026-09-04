@@ -1,0 +1,316 @@
+:root {
+  color-scheme: dark;
+  --bg: #070708;
+  --card: #101114;
+  --line: #23242a;
+  --text: #f2f2f4;
+  --muted: #8b8d96;
+  --red: #e11d2e;
+  --red-2: #ff3b4a;
+  --green: #3dcc7a;
+  --amber: #f0b429;
+  --blurple: #5865f2;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  font-family: Outfit, Segoe UI, system-ui, sans-serif;
+  background:
+    radial-gradient(900px 420px at 8% -10%, rgba(225, 29, 46, 0.22), transparent 55%),
+    radial-gradient(700px 380px at 110% 8%, rgba(88, 101, 242, 0.1), transparent 50%),
+    linear-gradient(180deg, #0c0c10 0%, var(--bg) 28%);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
+}
+
+a { color: var(--red-2); }
+a:hover { color: #ff6b76; }
+
+.wrap {
+  width: min(68rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.2rem 0 4.5rem;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin: 0 0 0.35rem;
+}
+
+.brand-mark {
+  width: 0.55rem;
+  height: 1.35rem;
+  background: linear-gradient(180deg, var(--red-2), var(--red));
+  border-radius: 1px;
+  box-shadow: 0 0 18px rgba(225, 29, 46, 0.55);
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--red-2);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3.2rem, 8vw, 5.4rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.55rem;
+}
+
+.lede {
+  margin: 0 0 1.8rem;
+  color: var(--muted);
+  max-width: 36rem;
+  font-size: 1.05rem;
+}
+
+.discord-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.discord-step .copy { min-width: 0; }
+
+.discord-step .btn.discord {
+  flex: 0 0 auto;
+  padding: 0.95rem 1.35rem;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 700px) {
+  .discord-step {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: linear-gradient(180deg, #16171c 0%, var(--card) 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.25rem 1.3rem 1.35rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.kicker {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card h2 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.06em;
+  font-size: 2rem;
+  margin: 0 0 0.45rem;
+}
+
+.card p.hint {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+ol.howto {
+  margin: 0 0 1.15rem;
+  padding-left: 1.15rem;
+  color: #d4d5db;
+}
+
+ol.howto li { margin: 0.45rem 0; }
+ol.howto code {
+  font-size: 0.88em;
+  color: #fff;
+  background: #1c1d24;
+  padding: 0.08rem 0.35rem;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.72rem 1rem;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn.discord {
+  background: var(--blurple);
+  color: #fff;
+}
+.btn.discord:hover { background: #6d78f5; color: #fff; }
+
+.btn.ghost {
+  background: transparent;
+  border-color: #3a3b44;
+  color: #ececf1;
+}
+.btn.ghost:hover { border-color: #6a6b76; color: #fff; }
+
+.join-grid {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.join-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: #fff;
+  background: #16171d;
+  border: 1px solid #2b2c34;
+  border-left: 4px solid var(--green);
+  border-radius: 12px;
+  padding: 0.95rem 1rem;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.join-card:hover {
+  transform: translateY(-1px);
+  background: #1b1c23;
+  color: #fff;
+}
+
+.join-card.busy {
+  border-left-color: var(--amber);
+}
+
+.join-name {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.join-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.join-card.busy .join-status { color: var(--amber); }
+
+.boards-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.4rem 0 0.85rem;
+}
+
+.boards-head h2 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.06em;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.stamp { color: #666; font-size: 0.85rem; margin: 0; }
+
+.board {
+  background: linear-gradient(180deg, #14151a 0%, #101114 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem 1.1rem 0.4rem;
+  margin: 0 0 1rem;
+  overflow-x: auto;
+}
+
+.board h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.55rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.board h3 {
+  margin: 0.85rem 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.live {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.live.empty { color: var(--green); }
+.live.busy { color: var(--amber); }
+
+table.laps {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+table.laps th, table.laps td {
+  text-align: left;
+  padding: 0.42rem 0.45rem;
+  border-bottom: 1px solid #23242b;
+  vertical-align: top;
+}
+
+table.laps th { color: #7d7f88; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+table.laps td.pos { color: #888; width: 2.2rem; }
+table.laps td.time { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+table.laps td.guid { font-family: ui-monospace, Consolas, monospace; font-size: 0.8rem; }
+table.laps a.steam { color: #9bd; text-decoration: none; }
+table.laps a.steam:hover { text-decoration: underline; }
+
+p.muted { color: #888; }
