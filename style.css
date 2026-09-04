@@ -298,6 +298,12 @@ ol.howto code {
   margin: 0;
 }
 
+.boards-hint {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .stamp { color: #666; font-size: 0.85rem; margin: 0; }
 
 .board {
@@ -317,12 +323,39 @@ ol.howto code {
   gap: 0.55rem;
 }
 
-.board h3 {
-  margin: 0.85rem 0 0.35rem;
-  font-size: 0.78rem;
+.board h3.car-name {
+  margin: 0;
+  font-size: 1.02rem;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text);
+}
+
+.board h4 {
+  margin: 0.7rem 0 0.3rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.car-boards {
+  display: grid;
+  gap: 0.85rem;
+  padding-bottom: 0.7rem;
+}
+
+.car-group {
+  background: #121318;
+  border: 1px solid #23242b;
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem 0.55rem;
+}
+
+.car-meta {
+  margin: 0.15rem 0 0.15rem;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .live {
