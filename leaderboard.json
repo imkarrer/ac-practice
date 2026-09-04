@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T00:01:58+00:00",
+  "updated": "2026-09-04T00:02:40+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -97,7 +97,14 @@
         }
       ],
       "session": [],
-      "online": []
+      "online": [
+        {
+          "guid": "76561197961983498",
+          "name": "fugazy",
+          "car": "abarth_124_2016",
+          "carName": "Abarth 124 Spider EC P1"
+        }
+      ]
     },
     "brainerd-competition": {
       "id": "brainerd-competition",
