@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T03:14:47+00:00",
+  "updated": "2026-09-04T03:20:18+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -46,6 +46,14 @@
           "carName": "Lotus Elise SC",
           "ms": 82593,
           "at": "2026-09-02T01:31:12+00:00"
+        },
+        {
+          "guid": "76561198042662616",
+          "name": "Cysterion",
+          "car": "abarth_124_2016",
+          "carName": "Abarth 124 Spider EC P1",
+          "ms": 82906,
+          "at": "2026-09-04T03:20:18+00:00"
         },
         {
           "guid": "76561199441943807",
@@ -96,7 +104,16 @@
           "at": "2026-09-03T02:13:19+00:00"
         }
       ],
-      "session": [],
+      "session": [
+        {
+          "guid": "76561198042662616",
+          "name": "Cysterion",
+          "car": "abarth_124_2016",
+          "carName": "Abarth 124 Spider EC P1",
+          "ms": 82906,
+          "at": "2026-09-04T03:20:18+00:00"
+        }
+      ],
       "online": [
         {
           "guid": "76561198042662616",
