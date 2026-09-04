@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T22:32:06+00:00",
+  "updated": "2026-09-04T22:35:28+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -130,14 +130,7 @@
           "at": "2026-09-04T22:25:53+00:00"
         }
       ],
-      "online": [
-        {
-          "guid": "76561199480521592",
-          "name": "theeguineapig",
-          "car": "pc_civic",
-          "carName": "Honda Civic Type-R (FK8)"
-        }
-      ]
+      "online": []
     },
     "road-america": {
       "id": "road-america",
