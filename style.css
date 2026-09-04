@@ -98,8 +98,15 @@ h1 {
 
 .discord-step .copy { min-width: 0; }
 
-.discord-step .btn.discord {
+.discord-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
   flex: 0 0 auto;
+  align-items: center;
+}
+
+.discord-step .discord-actions .btn.discord {
   padding: 0.95rem 1.35rem;
   font-size: 1.02rem;
 }
