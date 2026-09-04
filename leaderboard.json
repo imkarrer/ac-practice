@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T01:49:03+00:00",
+  "updated": "2026-09-04T01:49:41+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -116,33 +116,6 @@
       "online": [],
       "allTime": [],
       "session": []
-    },
-    "brainerd-competition": {
-      "id": "brainerd-competition",
-      "name": "Practice \u2014 Brainerd Competition",
-      "track": "brainerd-competition",
-      "sessionStarted": "2026-09-04T01:48:15+00:00",
-      "allTime": [],
-      "session": [],
-      "online": []
-    },
-    "brainerd-donnybrooke": {
-      "id": "brainerd-donnybrooke",
-      "name": "Practice \u2014 Brainerd Donnybrooke",
-      "track": "brainerd-donnybrooke",
-      "sessionStarted": "2026-09-04T01:48:26+00:00",
-      "allTime": [
-        {
-          "guid": "76561199441943807",
-          "name": "Herb",
-          "car": "lotus_elise_sc",
-          "carName": "Lotus Elise SC",
-          "ms": 114831,
-          "at": "2026-09-02T04:04:54+00:00"
-        }
-      ],
-      "session": [],
-      "online": []
     }
   }
 }
