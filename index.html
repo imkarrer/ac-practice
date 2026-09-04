@@ -86,9 +86,15 @@
       <div class="boards-head">
         <div>
           <h2>Leaderboard</h2>
-          <p class="boards-hint">Ranked per car, so a Civic isn't racing a 124.</p>
+          <p id="board-hint" class="boards-hint"></p>
         </div>
-        <p id="board-stamp" class="stamp"></p>
+        <div class="boards-tools">
+          <div class="rank-toggle" role="group" aria-label="Ranking mode">
+            <button type="button" data-rank="all">All cars</button>
+            <button type="button" data-rank="car">By car</button>
+          </div>
+          <p id="board-stamp" class="stamp"></p>
+        </div>
       </div>
       <div id="boards"><p class="muted">Loading times…</p></div>
     </section>
