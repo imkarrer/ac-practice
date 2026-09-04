@@ -304,7 +304,50 @@ ol.howto code {
   font-size: 0.92rem;
 }
 
+.boards-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.rank-toggle {
+  display: inline-flex;
+  padding: 0.18rem;
+  background: #16171d;
+  border: 1px solid #2b2c34;
+  border-radius: 999px;
+}
+
+.rank-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: 700 0.78rem Outfit, Segoe UI, system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.rank-toggle button.on {
+  background: #2a1216;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(225, 29, 46, 0.45);
+}
+
+.rank-toggle button:hover { color: #fff; }
+
+.mixed-boards { padding-bottom: 0.55rem; }
+
 .stamp { color: #666; font-size: 0.85rem; margin: 0; }
+
+@media (max-width: 700px) {
+  .boards-head { flex-direction: column; align-items: stretch; }
+  .boards-tools { align-items: flex-start; }
+}
 
 .board {
   background: linear-gradient(180deg, #14151a 0%, #101114 100%);
