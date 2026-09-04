@@ -3,227 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Practice (DEV)</title>
-  <style>
-    :root { color-scheme: dark; }
-    body {
-      margin: 0;
-      font-family: Segoe UI, system-ui, sans-serif;
-      background: #111;
-      color: #eee;
-      line-height: 1.5;
-    }
-    main {
-      width: min(52rem, calc(100% - 2rem));
-      margin: 2rem auto 4rem;
-    }
-    h1 { margin: 0 0 0.35rem; font-size: 1.7rem; }
-    h2 { margin: 1.6rem 0 0.45rem; font-size: 1.1rem; }
-    h3 { margin: 0.9rem 0 0.35rem; font-size: 0.95rem; color: #bbb; font-weight: 600; }
-    .sub { color: #aaa; margin: 0 0 1rem; }
-    a { color: #f66; }
-    a.btn {
-      display: inline-block;
-      background: #185;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 0.7rem 1rem;
-      border-radius: 4px;
-      margin: 0.25rem 0.4rem 0.25rem 0;
-    }
-    a.btn:hover { background: #1a7; }
-    a.btn.busy { background: #a60; }
-    a.btn.busy:hover { background: #c70; }
-    .live { font-size: 0.85rem; font-weight: 600; margin-left: 0.45rem; }
-    .live.empty { color: #6b6; }
-    .live.busy { color: #ec6; }
-    .downloads { margin: 0.75rem 0 0.25rem; }
-    .board { margin: 0 0 1.4rem; overflow-x: auto; }
-    table.laps {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.92rem;
-    }
-    table.laps th, table.laps td {
-      text-align: left;
-      padding: 0.35rem 0.5rem;
-      border-bottom: 1px solid #2a2a2a;
-      vertical-align: top;
-    }
-    table.laps th { color: #888; font-weight: 600; }
-    table.laps td.pos { color: #888; width: 2.2rem; }
-    table.laps td.time { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
-    table.laps td.guid { font-family: ui-monospace, Consolas, monospace; font-size: 0.8rem; }
-    table.laps a.steam { color: #9bd; text-decoration: none; }
-    table.laps a.steam:hover { text-decoration: underline; }
-    p.muted { color: #888; }
-    .stamp { color: #666; font-size: 0.85rem; margin: 0 0 0.75rem; }
-    ol.howto { color: #ccc; padding-left: 1.25rem; margin: 0 0 1rem; }
-    ol.howto li { margin: 0.4rem 0; }
-    ol.howto code { color: #eee; font-size: 0.9em; }
-    a.btn.discord { background: #5865f2; }
-    a.btn.discord:hover { background: #6d78f5; }
-  </style>
+  <title>FUGAZY SIM RACING — Practice DEV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <main>
-    <h1>Practice (DEV)</h1>
-    <p class="sub">Test lobby — not prod. Approved Steam IDs only. Green = empty. Amber = someone is in. <a href="../">Prod</a></p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <p class="eyebrow">Fugazy Sim Racing · Dev</p>
+      </div>
+      <h1>Practice</h1>
+      <p class="lede">Test lobby — not prod. Same whitelist as the public page. <a href="../">Back to prod</a>.</p>
+    </header>
 
-    <h2>How to register</h2>
-    <ol class="howto">
-      <li>Open the <strong>FUGAZY SIM RACING</strong> Discord channel <a href="https://discord.com/channels/1544532113615749210/1544532694631718912">#assetto-corsa</a>.</li>
-      <li>In Steam: your name → <strong>View my profile</strong> → right-click → <strong>Copy Page URL</strong>. Either <code>/id/yourname</code> or <code>/profiles/7656…</code> works.</li>
-      <li>In that Discord channel run <code>/steam-request</code> and paste the URL.</li>
-      <li>Wait for an admin to Approve. Optionally <code>/livery-set</code> to reserve one car + color.</li>
-    </ol>
-    <p class="sub">Then <a href="https://github.com/gro-ove/actools/releases/latest">Content Manager</a> → Join → Download missing content.</p>
-    <div class="downloads">
+    <section class="card discord-step">
+      <div class="copy">
+        <p class="kicker">01 — Discord</p>
+        <h2>Open FUGAZY SIM RACING</h2>
+        <p class="hint">Start here. Registration lives in <a href="https://discord.com/channels/1544532113615749210/1544532694631718912">#assetto-corsa</a>.</p>
+      </div>
       <a class="btn discord" href="https://discord.com/channels/1544532113615749210/1544532694631718912">Open FUGAZY SIM RACING</a>
-      <a class="btn join" data-lobby="dev-blackhawk" data-label="Join DEV Blackhawk" href="https://acstuff.ru/s/q:race/online/join?ip=167.237.13.200&httpPort=8089">Join DEV Blackhawk</a>
-    </div>
+    </section>
 
-    <h2>Leaderboard</h2>
-    <p id="board-stamp" class="stamp"></p>
-    <div id="boards"><p class="muted">Loading times…</p></div>
-  </main>
-  <script>
-    function formatTime(ms) {
-      const m = Math.floor(ms / 60000);
-      const s = Math.floor((ms % 60000) / 1000);
-      const milli = ms % 1000;
-      return m + ":" + String(s).padStart(2, "0") + "." + String(milli).padStart(3, "0");
-    }
+    <section class="grid">
+      <article class="card">
+        <p class="kicker">02 — Register</p>
+        <h2>Get approved</h2>
+        <ol class="howto" start="2">
+          <li>Steam → <strong>View my profile</strong> → right-click → <strong>Copy Page URL</strong>. <code>/id/</code> or <code>/profiles/</code> both work.</li>
+          <li>In Discord run <code>/steam-request</code> and paste that URL. Wait for an admin to Approve.</li>
+          <li>Want a reserved paint? <code>/livery-set</code> — an admin has to approve that too.</li>
+        </ol>
+        <div class="actions">
+          <a class="btn ghost" href="https://github.com/gro-ove/actools/releases/latest">Get Content Manager</a>
+        </div>
+      </article>
 
-    function el(tag, attrs, children) {
-      const node = document.createElement(tag);
-      if (attrs) {
-        Object.entries(attrs).forEach(function (entry) {
-          if (entry[1] != null) node.setAttribute(entry[0], entry[1]);
-        });
-      }
-      (children || []).forEach(function (child) {
-        if (typeof child === "string") node.appendChild(document.createTextNode(child));
-        else if (child) node.appendChild(child);
-      });
-      return node;
-    }
+      <article class="card">
+        <p class="kicker">03 — Drive</p>
+        <h2>Jump in</h2>
+        <p class="hint">Approved Steam IDs only. After join: Download missing content.</p>
+        <div class="join-grid">
+          <a class="join-card" data-lobby="dev-blackhawk" href="https://acstuff.ru/s/q:race/online/join?ip=167.237.13.200&httpPort=8089">
+            <span class="join-name">DEV Blackhawk</span>
+            <span class="join-status">…</span>
+          </a>
+        </div>
+      </article>
+    </section>
 
-    function emptyRow(text) {
-      const tr = el("tr");
-      const td = el("td", { colspan: "5", class: "muted" }, [text]);
-      tr.appendChild(td);
-      return tr;
-    }
-
-    function lapTable(rows, emptyText) {
-      const table = el("table", { class: "laps" });
-      const thead = el("thead");
-      const hr = el("tr");
-      ["#", "Driver", "Steam ID", "Car", "Time"].forEach(function (label) {
-        hr.appendChild(el("th", null, [label]));
-      });
-      thead.appendChild(hr);
-      table.appendChild(thead);
-      const tbody = el("tbody");
-      if (!rows || !rows.length) {
-        tbody.appendChild(emptyRow(emptyText));
-      } else {
-        rows.forEach(function (row, i) {
-          const tr = el("tr");
-          tr.appendChild(el("td", { class: "pos" }, [String(i + 1)]));
-          tr.appendChild(el("td", null, [row.name || "—"]));
-          const guid = row.guid || "";
-          const steam = guid
-            ? el("a", { class: "steam", href: "https://steamcommunity.com/profiles/" + guid, target: "_blank", rel: "noopener" }, [guid])
-            : document.createTextNode("—");
-          const guidCell = el("td", { class: "guid" });
-          guidCell.appendChild(steam);
-          tr.appendChild(guidCell);
-          tr.appendChild(el("td", null, [row.carName || row.car || "—"]));
-          tr.appendChild(el("td", { class: "time" }, [formatTime(row.ms)]));
-          tbody.appendChild(tr);
-        });
-      }
-      table.appendChild(tbody);
-      return table;
-    }
-
-    function practiceIds(lobbies) {
-      return Object.keys(lobbies).filter(function (id) {
-        if (id.indexOf("race-") === 0 || id.indexOf("slot-") === 0) return false;
-        return true;
-      });
-    }
-
-    function onlineDrivers(lobby) {
-      return (lobby && lobby.online) || [];
-    }
-
-    function onlineLabel(online) {
-      if (!online.length) return "empty";
-      if (online.length === 1) return online[0].name || "1 online";
-      return online.length + " online";
-    }
-
-    function renderJoins(data) {
-      const lobbies = (data && data.lobbies) || {};
-      document.querySelectorAll("[data-lobby]").forEach(function (btn) {
-        const online = onlineDrivers(lobbies[btn.getAttribute("data-lobby")]);
-        const label = btn.getAttribute("data-label") || "Join";
-        const names = online.map(function (row) { return row.name; }).filter(Boolean).join(", ");
-        btn.textContent = label + " · " + onlineLabel(online);
-        if (names) btn.setAttribute("title", names);
-        else btn.removeAttribute("title");
-        btn.classList.toggle("empty", !online.length);
-        btn.classList.toggle("busy", online.length > 0);
-      });
-    }
-
-    function renderBoard(data) {
-      const root = document.getElementById("boards");
-      const stamp = document.getElementById("board-stamp");
-      root.textContent = "";
-      stamp.textContent = data.updated ? "Updated " + data.updated.replace("T", " ").replace("+00:00", " UTC") : "";
-      renderJoins(data);
-      const lobbies = data.lobbies || {};
-      const ids = practiceIds(lobbies);
-      if (!ids.length) {
-        root.appendChild(el("p", { class: "muted" }, ["No laps recorded yet."]));
-        return;
-      }
-      ids.forEach(function (id) {
-        const lobby = lobbies[id];
-        const wrap = el("div", { class: "board" });
-        const heading = el("h2", null, [lobby.name || id]);
-        const online = onlineDrivers(lobby);
-        const live = el("span", { class: "live " + (online.length ? "busy" : "empty") }, [onlineLabel(online)]);
-        heading.appendChild(live);
-        wrap.appendChild(heading);
-        wrap.appendChild(el("h3", null, ["All-time"]));
-        wrap.appendChild(lapTable(lobby.allTime, "No valid laps yet."));
-        wrap.appendChild(el("h3", null, ["This session"]));
-        wrap.appendChild(lapTable(lobby.session, "No valid laps this session."));
-        root.appendChild(wrap);
-      });
-    }
-
-    async function loadBoard() {
-      try {
-        const res = await fetch("leaderboard.json?t=" + Date.now(), { cache: "no-store" });
-        if (!res.ok) throw new Error("missing");
-        renderBoard(await res.json());
-      } catch (err) {
-        document.getElementById("boards").textContent = "";
-        document.getElementById("boards").appendChild(
-          el("p", { class: "muted" }, ["No laps recorded yet."])
-        );
-      }
-    }
-
-    loadBoard();
-    setInterval(loadBoard, 15000);
-  </script>
+    <section>
+      <div class="boards-head">
+        <h2>Leaderboard</h2>
+        <p id="board-stamp" class="stamp"></p>
+      </div>
+      <div id="boards"><p class="muted">Loading times…</p></div>
+    </section>
+  </div>
+  <script src="../app.js"></script>
 </body>
 </html>
