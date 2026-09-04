@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T01:48:26+00:00",
+  "updated": "2026-09-04T01:49:03+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -98,6 +98,24 @@
       ],
       "session": [],
       "online": []
+    },
+    "road-america": {
+      "id": "road-america",
+      "name": "Practice \u2014 Road America",
+      "track": "road-america",
+      "sessionStarted": null,
+      "online": [],
+      "allTime": [],
+      "session": []
+    },
+    "gingerman": {
+      "id": "gingerman",
+      "name": "Practice \u2014 Gingerman Raceway",
+      "track": "gingerman",
+      "sessionStarted": null,
+      "online": [],
+      "allTime": [],
+      "session": []
     },
     "brainerd-competition": {
       "id": "brainerd-competition",
