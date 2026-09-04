@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T00:07:41+00:00",
+  "updated": "2026-09-04T01:48:26+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -103,7 +103,7 @@
       "id": "brainerd-competition",
       "name": "Practice \u2014 Brainerd Competition",
       "track": "brainerd-competition",
-      "sessionStarted": "2026-09-03T23:57:41+00:00",
+      "sessionStarted": "2026-09-04T01:48:15+00:00",
       "allTime": [],
       "session": [],
       "online": []
@@ -112,7 +112,7 @@
       "id": "brainerd-donnybrooke",
       "name": "Practice \u2014 Brainerd Donnybrooke",
       "track": "brainerd-donnybrooke",
-      "sessionStarted": "2026-09-03T23:57:41+00:00",
+      "sessionStarted": "2026-09-04T01:48:26+00:00",
       "allTime": [
         {
           "guid": "76561199441943807",
