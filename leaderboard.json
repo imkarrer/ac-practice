@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T02:05:06+00:00",
+  "updated": "2026-09-04T02:14:38+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -104,14 +104,7 @@
       "name": "Practice \u2014 Road America",
       "track": "road-america",
       "sessionStarted": null,
-      "online": [
-        {
-          "guid": "76561197961983498",
-          "name": "fugazy",
-          "car": "abarth_124_2016",
-          "carName": "Abarth 124 Spider EC P1"
-        }
-      ],
+      "online": [],
       "allTime": [],
       "session": []
     },
