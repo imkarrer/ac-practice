@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T22:13:50+00:00",
+  "updated": "2026-09-04T22:17:27+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -22,6 +22,14 @@
           "carName": "Honda Civic Type-R (FK8)",
           "ms": 78106,
           "at": "2026-09-03T01:18:20+00:00"
+        },
+        {
+          "guid": "76561199480521592",
+          "name": "theeguineapig",
+          "car": "pc_civic",
+          "carName": "Honda Civic Type-R (FK8)",
+          "ms": 78169,
+          "at": "2026-09-04T22:17:27+00:00"
         },
         {
           "guid": "76561198014952506",
@@ -104,7 +112,16 @@
           "at": "2026-09-03T02:13:19+00:00"
         }
       ],
-      "session": [],
+      "session": [
+        {
+          "guid": "76561199480521592",
+          "name": "theeguineapig",
+          "car": "pc_civic",
+          "carName": "Honda Civic Type-R (FK8)",
+          "ms": 78169,
+          "at": "2026-09-04T22:17:27+00:00"
+        }
+      ],
       "online": [
         {
           "guid": "76561199480521592",
