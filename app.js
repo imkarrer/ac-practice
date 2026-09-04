@@ -122,6 +122,11 @@ function groupByCar(allTime, session) {
   return Object.keys(groups)
     .map(function (key) { return groups[key]; })
     .sort(function (a, b) {
+      const aBest = (a.allTime[0] || a.session[0] || {}).ms;
+      const bBest = (b.allTime[0] || b.session[0] || {}).ms;
+      const aMs = aBest == null ? Infinity : Number(aBest);
+      const bMs = bBest == null ? Infinity : Number(bBest);
+      if (aMs !== bMs) return aMs - bMs;
       return a.name.localeCompare(b.name, undefined, { sensitivity: "base" });
     });
 }
