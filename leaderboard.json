@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T02:14:38+00:00",
+  "updated": "2026-09-04T02:19:27+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -113,7 +113,14 @@
       "name": "Practice \u2014 Gingerman Raceway",
       "track": "gingerman",
       "sessionStarted": null,
-      "online": [],
+      "online": [
+        {
+          "guid": "76561197961983498",
+          "name": "fugazy",
+          "car": "abarth_124_2016",
+          "carName": "Abarth 124 Spider EC P1"
+        }
+      ],
       "allTime": [],
       "session": []
     }
