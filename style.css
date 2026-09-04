@@ -50,17 +50,18 @@ a:hover { color: #ff6b76; }
 
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.7rem;
   margin: 0 0 0.35rem;
 }
 
 .brand-mark {
-  width: 0.55rem;
-  height: 1.35rem;
-  background: linear-gradient(180deg, var(--red-2), var(--red));
-  border-radius: 1px;
-  box-shadow: 0 0 18px rgba(225, 29, 46, 0.55);
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: 0 0 auto;
+  border-radius: 0.45rem;
+  background: #111 url("favicon.png") center / cover no-repeat;
+  box-shadow: 0 0 18px rgba(225, 29, 46, 0.35);
 }
 
 .eyebrow {
