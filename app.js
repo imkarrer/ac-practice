@@ -244,17 +244,53 @@ function renderBoard(data) {
   });
 }
 
+let lastUpdated = null;
+let loadInflight = false;
+
+function eventsUrl() {
+  const fromDom = (document.documentElement.getAttribute("data-events") || "").trim();
+  if (fromDom && fromDom.indexOf("__AC_") === -1) return fromDom;
+  return "https://ntfy.sh/ac-imkarrer-ac-practice-status/sse";
+}
+
 async function loadBoard() {
+  if (loadInflight) return;
+  loadInflight = true;
   try {
     const res = await fetch("leaderboard.json?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error("missing");
-    renderBoard(await res.json());
+    const data = await res.json();
+    if (lastUpdated && data.updated === lastUpdated) return;
+    lastUpdated = data.updated || null;
+    renderBoard(data);
   } catch (err) {
+    if (lastBoard) return;
     document.getElementById("boards").textContent = "";
     document.getElementById("boards").appendChild(
       el("p", { class: "muted" }, ["No laps recorded yet."])
     );
+  } finally {
+    loadInflight = false;
   }
+}
+
+function loadBoardSoon() {
+  loadBoard();
+  [1500, 4000, 8000].forEach(function (ms) {
+    setTimeout(loadBoard, ms);
+  });
+}
+
+function watchStatusEvents() {
+  const url = eventsUrl();
+  if (!url || typeof EventSource === "undefined") return;
+  try {
+    const source = new EventSource(url);
+    source.addEventListener("message", function () {
+      lastUpdated = null;
+      loadBoardSoon();
+    });
+  } catch (err) {}
 }
 
 document.querySelectorAll("[data-rank]").forEach(function (btn) {
@@ -262,6 +298,10 @@ document.querySelectorAll("[data-rank]").forEach(function (btn) {
     setRankMode(btn.getAttribute("data-rank"));
   });
 });
+document.addEventListener("visibilitychange", function () {
+  if (!document.hidden) loadBoard();
+});
 syncRankToggle();
 loadBoard();
+watchStatusEvents();
 setInterval(loadBoard, 15000);
