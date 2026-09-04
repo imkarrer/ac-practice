@@ -59,15 +59,29 @@
     table.laps a.steam:hover { text-decoration: underline; }
     p.muted { color: #888; }
     .stamp { color: #666; font-size: 0.85rem; margin: 0 0 0.75rem; }
+    ol.howto { color: #ccc; padding-left: 1.25rem; margin: 0 0 1rem; }
+    ol.howto li { margin: 0.4rem 0; }
+    ol.howto code { color: #eee; font-size: 0.9em; }
+    a.btn.discord { background: #5865f2; }
+    a.btn.discord:hover { background: #6d78f5; }
   </style>
 </head>
 <body>
   <main>
     <h1>Practice (DEV)</h1>
-    <p class="sub">Test lobby — not prod. Whitelist, then <a href="https://github.com/gro-ove/actools/releases/latest">Content Manager</a> → Join → Download missing content. Green = empty. Amber = someone is in. <a href="../">Prod</a></p>
+    <p class="sub">Test lobby — not prod. Approved Steam IDs only. Green = empty. Amber = someone is in. <a href="../">Prod</a></p>
 
+    <h2>How to register</h2>
+    <ol class="howto">
+      <li>Open the CVSCC Discord channel <a href="https://discord.com/channels/1544532113615749210/1544532694631718912">#assetto-corsa</a>.</li>
+      <li>In Steam: your name → <strong>View my profile</strong> → right-click → <strong>Copy Page URL</strong>. Either <code>/id/yourname</code> or <code>/profiles/7656…</code> works.</li>
+      <li>In that Discord channel run <code>/steam-request</code> and paste the URL.</li>
+      <li>Wait for an admin to Approve. Optionally <code>/livery-set</code> to reserve one car + color.</li>
+    </ol>
+    <p class="sub">Then <a href="https://github.com/gro-ove/actools/releases/latest">Content Manager</a> → Join → Download missing content.</p>
     <div class="downloads">
-      <a class="btn join" data-lobby="dev-blackhawk" data-label="Join DEV Blackhawk" href="https://acstuff.ru/s/q:race/online/join?ip=167.237.13.200&amp;httpPort=8089">Join DEV Blackhawk</a>
+      <a class="btn discord" href="https://discord.com/channels/1544532113615749210/1544532694631718912">Open #assetto-corsa</a>
+      <a class="btn join" data-lobby="dev-blackhawk" data-label="Join DEV Blackhawk" href="https://acstuff.ru/s/q:race/online/join?ip=167.237.13.200&httpPort=8089">Join DEV Blackhawk</a>
     </div>
 
     <h2>Leaderboard</h2>
