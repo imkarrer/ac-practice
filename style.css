@@ -114,7 +114,48 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cars-step {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.2rem;
   margin-bottom: 2rem;
+}
+
+.cars-step .copy { min-width: 0; flex: 1; }
+
+.cars-step .btn {
+  flex: 0 0 auto;
+  margin-top: 1.6rem;
+}
+
+.car-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0 0 0.85rem;
+  padding: 0;
+}
+
+.car-pills li {
+  background: #1c1d24;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.38rem 0.8rem;
+  font-size: 0.88rem;
+  color: #ececf1;
+}
+
+@media (max-width: 700px) {
+  .cars-step {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cars-step .btn { margin-top: 0; }
 }
 
 @media (max-width: 800px) {
