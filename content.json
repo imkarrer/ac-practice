@@ -12,40 +12,8 @@
       "url": "https://github.com/imkarrer/ac-practice/releases/download/content/pc_civic.zip",
       "version": "1.02"
     },
-    "some1_honda_nsx_1991": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_1991.zip",
-      "version": "3.0.0"
-    },
-    "some1_honda_nsx_r_1992": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_r_1992.zip",
-      "version": "3.0.0"
-    },
-    "some1_honda_nsx_r_1994": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_r_1994.zip",
-      "version": "3.0.0"
-    },
     "some1_honda_nsx_1997_s1": {
       "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_1997_s1.zip",
-      "version": "3.0.0"
-    },
-    "some1_honda_nsx_type_s_zero_1997": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_type_s_zero_1997.zip",
-      "version": "3.0.0"
-    },
-    "some1_acura_nsx_1992": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_1992.zip",
-      "version": "3.0.0"
-    },
-    "some1_acura_nsx_1994": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_1994.zip",
-      "version": "3.0.0"
-    },
-    "some1_acura_nsx_1994_s1": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_1994_s1.zip",
-      "version": "3.0.0"
-    },
-    "some1_acura_nsx_zanardi_1999": {
-      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_zanardi_1999.zip",
       "version": "3.0.0"
     }
   },
