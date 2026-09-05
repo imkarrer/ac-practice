@@ -1,19 +1,12 @@
 {
-  "updated": "2026-09-05T01:07:53+00:00",
+  "updated": "2026-09-05T01:09:00+00:00",
   "lobbies": {
     "dev-blackhawk": {
       "id": "dev-blackhawk",
       "name": "[DEV] Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
       "sessionStarted": "2026-09-05T01:04:22+00:00",
-      "online": [
-        {
-          "guid": "76561197961983498",
-          "name": "fugazy",
-          "car": "tbb_toyota_gr86_premium",
-          "carName": "Toyota GR86 Premium"
-        }
-      ],
+      "online": [],
       "allTime": [],
       "session": []
     }
