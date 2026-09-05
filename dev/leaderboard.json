@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05T17:21:31+00:00",
+  "updated": "2026-09-05T17:32:22+00:00",
   "lobbies": {
     "dev-blackhawk": {
       "id": "dev-blackhawk",
@@ -10,5 +10,7 @@
       "allTime": [],
       "session": []
     }
-  }
+  },
+  "status": "up",
+  "aliveAt": "2026-09-05T17:32:22+00:00"
 }
