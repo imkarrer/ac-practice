@@ -24,10 +24,16 @@ const RANK_HINTS = {
   all: "Every car on one list — fastest lap wins.",
   car: "Positions restart for each car, so a Civic isn't racing a 124.",
 };
-const HEALTH_STALE_MS = 3 * 60 * 1000;
+// Plugin pings ntfy every 60s and does not rewrite GitHub on each beat.
+// Fail-over has to be several missed beats, and first paint must wait for
+// ntfy before treating a stale leaderboard.json timestamp as "down".
+const HEALTH_BEAT_MS = 60 * 1000;
+const HEALTH_STALE_MS = 4 * 60 * 1000;
+const HEALTH_GRACE_MS = 90 * 1000;
 
 let lastBoard = null;
 let lastAliveAt = 0;
+let healthWatchStarted = Date.now();
 
 function rankMode() {
   try {
@@ -213,7 +219,16 @@ function parseStamp(value) {
 
 function markAlive(when) {
   const ms = when ? parseStamp(when) : Date.now();
+  if (!ms || Date.now() - ms >= HEALTH_STALE_MS) return;
   if (ms > lastAliveAt) lastAliveAt = ms;
+}
+
+function newestStamp(data) {
+  return Math.max(
+    lastAliveAt,
+    parseStamp(data && data.aliveAt),
+    parseStamp(data && data.updated)
+  );
 }
 
 function boardHealth(data) {
@@ -227,13 +242,16 @@ function boardHealth(data) {
       message: custom || "Practice servers are down for maintenance.",
     };
   }
-  const fresh = Math.max(lastAliveAt, parseStamp(data && data.aliveAt), parseStamp(data && data.updated));
+  const fresh = newestStamp(data);
   if (fresh && Date.now() - fresh < HEALTH_STALE_MS) {
     return { state: "up", label: "Online", title: "", message: "" };
   }
+  if (Date.now() - healthWatchStarted < HEALTH_GRACE_MS) {
+    return { state: "checking", label: "Checking…", title: "", message: "" };
+  }
   return {
-    state: lastBoard || lastAliveAt ? "down" : "checking",
-    label: lastBoard || lastAliveAt ? "Down" : "Checking…",
+    state: "down",
+    label: "Down",
     title: "Servers down",
     message: custom || "Practice servers are offline.",
   };
@@ -414,3 +432,4 @@ pollRecentEvents();
 watchStatusEvents();
 setInterval(loadBoard, 15000);
 setInterval(function () { renderHealth(lastBoard || {}); }, 15000);
+setTimeout(function () { renderHealth(lastBoard || {}); }, HEALTH_GRACE_MS);
