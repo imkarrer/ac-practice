@@ -48,18 +48,18 @@
         <p class="stat-label">Season model is fixed. Signup does not pick the car.</p>
       </article>
       <article class="stat-card">
-        <p class="stat-value">color</p>
-        <p class="stat-label">What <code>/ac-practice signup</code> actually chooses. Skip it → Trueno Blue.</p>
+        <p class="stat-value">#1–999</p>
+        <p class="stat-label">Reserved at <code>/intake</code>. Unique across the club. Same number on every series car.</p>
       </article>
       <article class="stat-card">
         <p class="stat-value">miss = last</p>
-        <p class="stat-label">No legal quali lap? You still race. You start at the back. You still get a number.</p>
+        <p class="stat-label">No legal quali lap? You still race. You start at the back. You still get your number.</p>
       </article>
     </section>
 
     <aside class="note">
       <strong>Two different “pick a car” commands</strong>
-      <p><code>/livery-set</code> is practice only — any hosted car + color. The championship car is fixed for the season. For the series you only pick a factory paint on <code>/ac-practice signup</code>.</p>
+      <p><code>/livery-set</code> is practice only — any hosted car + color. The championship car is fixed for the season. <code>/intake</code> is Steam + your race number. <code>/ac-practice signup</code> only picks a factory paint (skip it → Trueno Blue) and copies the number you already reserved.</p>
     </aside>
 
     <section id="weekend">
@@ -69,13 +69,13 @@
       <ol class="flow">
         <li>
           <span class="flow-who">once</span>
-          <strong>Link Steam</strong>
-          <code>/intake</code> — Steam + number → staff Approve
+          <strong>Intake</strong>
+          <code>/intake</code> — Steam profile + unique number 1–999. Staff Approve. Already approved? Number only.
         </li>
         <li>
           <span class="flow-who">driver</span>
           <strong>Series signup</strong>
-          <code>/ac-practice signup</code> — color dropdown
+          <code>/ac-practice signup</code> — color dropdown; number comes from intake
         </li>
         <li>
           <span class="flow-who">driver</span>
@@ -205,7 +205,7 @@
             <tr>
               <td>driver</td>
               <td class="guid">/ac-practice signup</td>
-              <td>Join the championship. Color optional. Number comes from `/intake`.</td>
+              <td>Join the championship. Color optional. Number comes from <code>/intake</code>.</td>
             </tr>
             <tr>
               <td>driver</td>
@@ -251,7 +251,7 @@
       <p class="kicker">Fixed rules</p>
       <h2>Not up for vote</h2>
       <ul class="howto-plain">
-        <li><code>/ac-practice signup</code> required — the list locks when qualifying closes.</li>
+        <li><code>/intake</code> first — Steam + a unique number. Then <code>/ac-practice signup</code>. The list locks when qualifying closes.</li>
         <li>Miss quali → back of grid.</li>
         <li>Quali: server cut detection. Invalid lap, no time.</li>
         <li>Race: track limits via stewarding, not auto-DQ.</li>
@@ -261,8 +261,8 @@
     </section>
 
     <aside class="note warn">
-      <strong>Where we are</strong>
-      <p>The weekend loop above is what we are building toward. First public step is the format vote in <a href="https://discord.com/channels/1544532113615749210/1544893635353649294">#feature-requests</a>. First on-track step is a quiet two-person shakedown — not Round 0. Standings and a live join button land on this same page when a round is actually open.</p>
+      <strong>Where we are — 2026-09-05</strong>
+      <p><strong>Live:</strong> <code>/intake</code> (Steam + unique number), <code>/admin init</code> / <code>add-round</code>, series signup (color; number copied from intake), grid sort, door-number bake on quali-close. <strong>Next:</strong> format vote in <a href="https://discord.com/channels/1544532113615749210/1544893635353649294">#feature-requests</a>, then a quiet two-person shakedown — not Round 0. Still to build: roster freeze, one-command race start, standings/join on this page.</p>
     </aside>
   </div>
   <script src="series.js?v=1"></script>
