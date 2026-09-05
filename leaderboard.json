@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-05T17:21:27+00:00",
+  "updated": "2026-09-05T17:31:07+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
       "name": "Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
-      "sessionStarted": "2026-09-05T08:00:04+00:00",
+      "sessionStarted": "2026-09-05T17:31:07+00:00",
       "allTime": [
         {
           "guid": "76561199480521592",
@@ -119,7 +119,7 @@
       "id": "road-america",
       "name": "Practice \u2014 Road America",
       "track": "road-america",
-      "sessionStarted": "2026-09-05T08:00:02+00:00",
+      "sessionStarted": "2026-09-05T17:31:06+00:00",
       "online": [],
       "allTime": [],
       "session": []
@@ -128,10 +128,12 @@
       "id": "gingerman",
       "name": "Practice \u2014 Gingerman Raceway",
       "track": "gingerman",
-      "sessionStarted": "2026-09-05T08:00:02+00:00",
+      "sessionStarted": "2026-09-05T17:31:05+00:00",
       "online": [],
       "allTime": [],
       "session": []
     }
-  }
+  },
+  "status": "up",
+  "aliveAt": "2026-09-05T17:31:07+00:00"
 }
