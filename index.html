@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <div class="wrap">
@@ -19,14 +19,23 @@
         <a class="nav-link on" href="index.html">Practice</a>
         <a class="nav-link" href="series.html">Series</a>
         <a class="nav-link ghost" href="https://discord.gg/Rh7vevrUYy">Discord</a>
+        <p class="health" id="health" data-state="checking" role="status" aria-live="polite">
+          <span class="health-dot" aria-hidden="true"></span>
+          <span class="health-label">Checking…</span>
+        </p>
       </nav>
       <div class="brand">
         <span class="brand-mark" aria-hidden="true"></span>
         <p class="eyebrow">Fugazy Sim Racing</p>
       </div>
       <h1>Practice</h1>
-      <p class="lede">Private Assetto Corsa sessions. Get approved on Discord, then jump a lobby. Green is empty. Amber means someone’s already in.</p>
+      <p class="lede">Private Assetto Corsa sessions. Get approved on Discord, then jump a lobby. The light is the box — green is up, red is down. On a lobby card, green is empty and amber means someone’s already in.</p>
     </header>
+
+    <aside class="health-banner" id="health-banner" hidden>
+      <strong id="health-title">Down for maintenance</strong>
+      <p id="health-message">Practice servers are offline.</p>
+    </aside>
 
     <section class="card discord-step">
       <div class="copy">
@@ -124,6 +133,6 @@
       <div id="boards"><p class="muted">Loading times…</p></div>
     </section>
   </div>
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

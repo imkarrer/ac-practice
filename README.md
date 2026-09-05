@@ -44,3 +44,9 @@ Occupancy and laps may lag ~30–60s (debounce + Pages CDN). The page shows the 
 ## Content Manager
 
 `content.json` and `dev/content.json` list **only** the patched 124 Spider (shared GitHub Release). GR86, Civic, tracks, and CSP must be installed from the source links before joining.
+
+## Box health light
+
+The header pill is the practice box (green = up, red = down), not lobby occupancy.
+leaderboard.json can carry status (up / maintenance / down) and statusMessage.
+On the box: python3 scripts/acctl.py maintenance --on --message "..." and --off when you are back.

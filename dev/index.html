@@ -10,18 +10,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=6">
+  <link rel="stylesheet" href="../style.css?v=7">
 </head>
 <body>
   <div class="wrap">
     <header>
+      <nav class="site-nav" aria-label="Site">
+        <a class="nav-link" href="../">Prod</a>
+        <p class="health" id="health" data-state="checking" role="status" aria-live="polite">
+          <span class="health-dot" aria-hidden="true"></span>
+          <span class="health-label">Checking…</span>
+        </p>
+      </nav>
       <div class="brand">
         <span class="brand-mark" aria-hidden="true"></span>
         <p class="eyebrow">Fugazy Sim Racing · Dev</p>
       </div>
       <h1>Practice</h1>
-      <p class="lede">Test lobby — not prod. Same whitelist as the public page. <a href="../">Back to prod</a>.</p>
+      <p class="lede">Test lobby — not prod. Same whitelist as the public page. The light is this DEV box. <a href="../">Back to prod</a>.</p>
     </header>
+
+    <aside class="health-banner" id="health-banner" hidden>
+      <strong id="health-title">Down for maintenance</strong>
+      <p id="health-message">DEV lobby is offline.</p>
+    </aside>
 
     <section class="card discord-step">
       <div class="copy">
@@ -111,6 +123,6 @@
       <div id="boards"><p class="muted">Loading times…</p></div>
     </section>
   </div>
-  <script src="../app.js?v=4"></script>
+  <script src="../app.js?v=5"></script>
 </body>
 </html>
