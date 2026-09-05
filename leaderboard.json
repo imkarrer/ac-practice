@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05T23:26:09+00:00",
+  "updated": "2026-09-05T23:29:39+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -130,14 +130,7 @@
           "at": "2026-09-05T23:26:09+00:00"
         }
       ],
-      "online": [
-        {
-          "guid": "76561199480521592",
-          "name": "theeguineapig",
-          "car": "abarth_124_2016",
-          "carName": "Abarth 124 Spider EC P1"
-        }
-      ]
+      "online": []
     },
     "road-america": {
       "id": "road-america",
@@ -159,5 +152,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-05T23:26:09+00:00"
+  "aliveAt": "2026-09-05T23:29:39+00:00"
 }
