@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FUGAZY SIM RACING — Series</title>
+  <link rel="icon" type="image/png" href="favicon.png?v=1">
+  <link rel="apple-touch-icon" href="favicon.png?v=1">
+  <meta property="og:title" content="FUGAZY SIM RACING — Series weekend">
+  <meta property="og:description" content="How a championship weekend works: signup, quali, grid, numbered cars, race.">
+  <meta property="og:image" content="https://imkarrer.github.io/ac-practice/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+  <div class="wrap series-page">
+    <header>
+      <nav class="site-nav" aria-label="Site">
+        <a class="nav-link" href="index.html">Practice</a>
+        <a class="nav-link on" href="series.html">Series</a>
+        <a class="nav-link ghost" href="https://discord.gg/Rh7vevrUYy">Discord</a>
+      </nav>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <p class="eyebrow">Fugazy Sim Racing</p>
+      </div>
+      <h1>Series</h1>
+      <p class="lede">How a championship weekend works. This page is the living plan — we update it here as the series evolves. Practice lobbies stay on the Practice tab.</p>
+    </header>
+
+    <section class="card discord-step" id="series-1">
+      <div class="copy">
+        <p class="kicker">Series #1</p>
+        <h2>Fugazy Series #1</h2>
+        <p class="hint">One car for the season. Drivers pick a factory color, not the model. Votes on format go in Discord <a href="https://discord.com/channels/1544532113615749210/1544893635353649294">#feature-requests</a>. After that we run one non-points pilot, then a real season if it holds up.</p>
+      </div>
+      <div class="discord-actions">
+        <a class="btn discord" href="https://discord.gg/Rh7vevrUYy">Join Discord</a>
+        <a class="btn ghost" href="https://discord.com/channels/1544532113615749210/1544893635353649294">Vote the format</a>
+      </div>
+    </section>
+
+    <section class="stat-grid" aria-label="Series facts">
+      <article class="stat-card">
+        <p class="stat-value">1 car</p>
+        <p class="stat-label">Season model is fixed. Signup does not pick the car.</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-value">color</p>
+        <p class="stat-label">What <code>/ac-practice signup</code> actually chooses. Skip it → Trueno Blue.</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-value">miss = last</p>
+        <p class="stat-label">No legal quali lap? You still race. You start at the back. You still get a number.</p>
+      </article>
+    </section>
+
+    <aside class="note">
+      <strong>Two different “pick a car” commands</strong>
+      <p><code>/livery-set</code> is practice only — any hosted car + color. The championship car is fixed for the season. For the series you only pick a factory paint on <code>/ac-practice signup</code>.</p>
+    </aside>
+
+    <section id="weekend">
+      <p class="kicker">Race weekend</p>
+      <h2 class="section-title">End to end</h2>
+      <p class="section-lede">Quali runs on factory paints so the download does not change while people are lapping. Numbers are baked when quali closes. The race server pins each Steam ID to that numbered skin.</p>
+      <ol class="flow">
+        <li>
+          <span class="flow-who">once</span>
+          <strong>Link Steam</strong>
+          <code>/steam-request</code> → staff <code>/steam-approve</code>
+        </li>
+        <li>
+          <span class="flow-who">driver</span>
+          <strong>Series signup</strong>
+          <code>/ac-practice signup</code> — color dropdown
+        </li>
+        <li>
+          <span class="flow-who">driver</span>
+          <strong>Quali server</strong>
+          Join. Factory skin only. Cuts discard that lap.
+        </li>
+        <li>
+          <span class="flow-who">server</span>
+          <strong>Hotlaps recorded</strong>
+          Legal personal bests land on your Steam ID.
+        </li>
+        <li class="flow-mark">
+          <span class="flow-who">admin</span>
+          <strong>Close quali</strong>
+          <code>/admin quali-close</code>
+        </li>
+        <li class="flow-mark">
+          <span class="flow-who">server</span>
+          <strong>Sort the grid</strong>
+          Fastest first. No lap → back. Still on the list.
+        </li>
+        <li class="flow-mark">
+          <span class="flow-who">server</span>
+          <strong>Bake numbers</strong>
+          Door numbers on the race skins. Same number all season.
+        </li>
+        <li>
+          <span class="flow-who">driver</span>
+          <strong>Race server</strong>
+          Pole is first pit. Skin is your numbered car, not quali paint.
+        </li>
+        <li>
+          <span class="flow-who">admin</span>
+          <strong>Points</strong>
+          <code>/admin results-import</code> → <code>results-finalize</code>
+        </li>
+      </ol>
+    </section>
+
+    <section id="grid">
+      <p class="kicker">After quali closes</p>
+      <h2 class="section-title">How the grid is set</h2>
+      <p class="section-lede">Assetto Corsa has no async quali API. Legal laps (no cuts) become a sorted list. That list is pit order on the race server. Live quali on race night is the other option — one server, AC sorts it — and is a poll question.</p>
+      <div class="board">
+        <table class="laps">
+          <thead>
+            <tr>
+              <th>Driver</th>
+              <th>Quali PB</th>
+              <th>Grid</th>
+              <th>Race skin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice — signed up, blue</td>
+              <td class="time">1:31.200</td>
+              <td>P1 pole</td>
+              <td class="guid">series1_12</td>
+            </tr>
+            <tr>
+              <td>Bob — signed up, raven</td>
+              <td class="time">1:31.850</td>
+              <td>P2</td>
+              <td class="guid">series1_7</td>
+            </tr>
+            <tr>
+              <td>Cara — signed up, no lap</td>
+              <td class="time">—</td>
+              <td>P3 back</td>
+              <td class="guid">series1_44</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">Example only. Your number is yours for the season. Quali paint is not the race skin.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <p class="kicker">Quali</p>
+        <h2>Factory paint</h2>
+        <p class="hint">The skin you picked at signup. No door numbers yet, so the car zip does not have to change mid-session.</p>
+        <p class="hint">Cut a lap = that lap does not count. Miss the session entirely = last on the grid, still racing.</p>
+      </article>
+      <article class="card">
+        <p class="kicker">Race</p>
+        <h2>Numbered cars</h2>
+        <p class="hint">Same people, new skins. Pit order is the sorted grid, not who signed up first.</p>
+        <p class="hint"><code>/ac-practice race-join</code> when the race server is live. <code>/ac-practice grid-show</code> after quali if you want the order.</p>
+      </article>
+    </section>
+
+    <section id="commands">
+      <p class="kicker">Discord</p>
+      <h2 class="section-title">Commands people actually run</h2>
+      <div class="board">
+        <table class="laps">
+          <thead>
+            <tr>
+              <th>Who</th>
+              <th>Command</th>
+              <th>What it does</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>admin</td>
+              <td class="guid">/admin init</td>
+              <td>Create a series: name + car, optional first track.</td>
+            </tr>
+            <tr>
+              <td>admin</td>
+              <td class="guid">/admin add-round</td>
+              <td>Append a track. Then <code>/admin round-open</code> for the Discord channel.</td>
+            </tr>
+            <tr>
+              <td>once</td>
+              <td class="guid">/steam-request</td>
+              <td>Paste a Steam profile. Staff approves the GUID.</td>
+            </tr>
+            <tr>
+              <td>practice</td>
+              <td class="guid">/livery-set</td>
+              <td>Reserve a practice car + color. Not used by the series.</td>
+            </tr>
+            <tr>
+              <td>driver</td>
+              <td class="guid">/ac-practice signup</td>
+              <td>Join the championship. Optional factory color.</td>
+            </tr>
+            <tr>
+              <td>driver</td>
+              <td class="guid">/ac-practice withdraw</td>
+              <td>Leave before the grid is locked.</td>
+            </tr>
+            <tr>
+              <td>driver</td>
+              <td>join the quali IP</td>
+              <td>Hotlap. Legal PBs land on your Steam ID.</td>
+            </tr>
+            <tr>
+              <td>admin</td>
+              <td class="guid">/admin quali-close</td>
+              <td>Sort the grid and bake numbered skins.</td>
+            </tr>
+            <tr>
+              <td>driver</td>
+              <td class="guid">/ac-practice grid-show</td>
+              <td>Print the locked order.</td>
+            </tr>
+            <tr>
+              <td>admin</td>
+              <td class="guid">/admin race-start</td>
+              <td>Mark the round live and post the join link.</td>
+            </tr>
+            <tr>
+              <td>driver</td>
+              <td class="guid">/ac-practice race-join</td>
+              <td>Join URL once the race server is up.</td>
+            </tr>
+            <tr>
+              <td>admin</td>
+              <td class="guid">/admin results-import</td>
+              <td>Finish order in, then <code>results-finalize</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" id="rules">
+      <p class="kicker">Fixed rules</p>
+      <h2>Not up for vote</h2>
+      <ul class="howto-plain">
+        <li><code>/ac-practice signup</code> required — the list locks when qualifying closes.</li>
+        <li>Miss quali → back of grid.</li>
+        <li>Quali: server cut detection. Invalid lap, no time.</li>
+        <li>Race: track limits via stewarding, not auto-DQ.</li>
+        <li>Driver aids: your choice in-car.</li>
+        <li>Race length is a time; we set laps per track.</li>
+      </ul>
+    </section>
+
+    <aside class="note warn">
+      <strong>Where we are</strong>
+      <p>The weekend loop above is what we are building toward. First public step is the format vote in <a href="https://discord.com/channels/1544532113615749210/1544893635353649294">#feature-requests</a>. First on-track step is a quiet two-person shakedown — not Round 0. Standings and a live join button land on this same page when a round is actually open.</p>
+    </aside>
+  </div>
+  <script src="series.js?v=1"></script>
+</body>
+</html>
