@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-04T22:35:28+00:00",
+  "updated": "2026-09-05T01:13:28+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
       "name": "Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
-      "sessionStarted": "2026-09-04T08:00:04+00:00",
+      "sessionStarted": "2026-09-05T01:13:28+00:00",
       "allTime": [
         {
           "guid": "76561199480521592",
@@ -112,31 +112,14 @@
           "at": "2026-09-03T02:13:19+00:00"
         }
       ],
-      "session": [
-        {
-          "guid": "76561199480521592",
-          "name": "theeguineapig",
-          "car": "pc_civic",
-          "carName": "Honda Civic Type-R (FK8)",
-          "ms": 76143,
-          "at": "2026-09-04T22:32:06+00:00"
-        },
-        {
-          "guid": "76561197961983498",
-          "name": "fugazy",
-          "car": "abarth_124_2016",
-          "carName": "Abarth 124 Spider EC P1",
-          "ms": 85361,
-          "at": "2026-09-04T22:25:53+00:00"
-        }
-      ],
+      "session": [],
       "online": []
     },
     "road-america": {
       "id": "road-america",
       "name": "Practice \u2014 Road America",
       "track": "road-america",
-      "sessionStarted": "2026-09-04T08:00:02+00:00",
+      "sessionStarted": "2026-09-05T01:13:27+00:00",
       "online": [],
       "allTime": [],
       "session": []
@@ -145,7 +128,7 @@
       "id": "gingerman",
       "name": "Practice \u2014 Gingerman Raceway",
       "track": "gingerman",
-      "sessionStarted": "2026-09-04T08:00:02+00:00",
+      "sessionStarted": "2026-09-05T01:13:26+00:00",
       "online": [],
       "allTime": [],
       "session": []
