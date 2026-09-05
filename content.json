@@ -2,7 +2,65 @@
   "cars": {
     "abarth_124_2016": {
       "url": "https://github.com/imkarrer/ac-practice/releases/download/content/abarth_124_2016.zip",
-      "version": "1.3"
+      "version": "2.2"
+    },
+    "tbb_toyota_gr86_premium": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/tbb_toyota_gr86_premium.zip",
+      "version": "2.0.1"
+    },
+    "pc_civic": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/pc_civic.zip",
+      "version": "1.02"
+    },
+    "some1_honda_nsx_1991": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_1991.zip",
+      "version": "3.0.0"
+    },
+    "some1_honda_nsx_r_1992": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_r_1992.zip",
+      "version": "3.0.0"
+    },
+    "some1_honda_nsx_r_1994": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_r_1994.zip",
+      "version": "3.0.0"
+    },
+    "some1_honda_nsx_1997_s1": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_1997_s1.zip",
+      "version": "3.0.0"
+    },
+    "some1_honda_nsx_type_s_zero_1997": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_honda_nsx_type_s_zero_1997.zip",
+      "version": "3.0.0"
+    },
+    "some1_acura_nsx_1992": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_1992.zip",
+      "version": "3.0.0"
+    },
+    "some1_acura_nsx_1994": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_1994.zip",
+      "version": "3.0.0"
+    },
+    "some1_acura_nsx_1994_s1": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_1994_s1.zip",
+      "version": "3.0.0"
+    },
+    "some1_acura_nsx_zanardi_1999": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/some1_acura_nsx_zanardi_1999.zip",
+      "version": "3.0.0"
+    }
+  },
+  "tracks": {
+    "slipangle_ggt": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/slipangle_ggt.zip",
+      "version": "1.1.1"
+    },
+    "lilski_road_america": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/lilski_road_america.zip",
+      "version": "1.0"
+    },
+    "gingerman_raceway": {
+      "url": "https://github.com/imkarrer/ac-practice/releases/download/content/gingerman_raceway.zip",
+      "version": "1.0"
     }
   }
 }
