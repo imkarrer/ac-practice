@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05T08:00:04+00:00",
+  "updated": "2026-09-05T17:21:27+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -133,7 +133,5 @@
       "allTime": [],
       "session": []
     }
-  },
-  "status": "maintenance",
-  "statusMessage": "Practice servers are down for maintenance."
+  }
 }
