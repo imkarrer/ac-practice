@@ -1,19 +1,12 @@
 {
-  "updated": "2026-09-05T02:35:40+00:00",
+  "updated": "2026-09-05T02:36:35+00:00",
   "lobbies": {
     "dev-blackhawk": {
       "id": "dev-blackhawk",
       "name": "[DEV] Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
       "sessionStarted": "2026-09-05T02:23:03+00:00",
-      "online": [
-        {
-          "guid": "76561197961983498",
-          "name": "fugazy",
-          "car": "ks_mazda_miata",
-          "carName": "Mazda Miata NA"
-        }
-      ],
+      "online": [],
       "allTime": [],
       "session": []
     }
