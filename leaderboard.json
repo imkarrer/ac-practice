@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T17:21:18+00:00",
+  "updated": "2026-09-06T17:25:17+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -169,14 +169,7 @@
       "name": "Practice \u2014 Road America",
       "track": "road-america",
       "sessionStarted": "2026-09-06T08:00:02+00:00",
-      "online": [
-        {
-          "guid": "76561198014952506",
-          "name": "Von Stryker",
-          "car": "tbb_toyota_gr86_premium",
-          "carName": "Toyota GR86 Premium"
-        }
-      ],
+      "online": [],
       "allTime": [
         {
           "guid": "76561198014952506",
@@ -218,5 +211,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-06T17:21:18+00:00"
+  "aliveAt": "2026-09-06T17:25:17+00:00"
 }
