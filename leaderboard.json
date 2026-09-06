@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T16:10:37+00:00",
+  "updated": "2026-09-06T16:12:45+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -169,7 +169,14 @@
       "name": "Practice \u2014 Road America",
       "track": "road-america",
       "sessionStarted": "2026-09-06T08:00:02+00:00",
-      "online": [],
+      "online": [
+        {
+          "guid": "76561199480521592",
+          "name": "theeguineapig",
+          "car": "ks_mazda_miata",
+          "carName": "Mazda Miata NA"
+        }
+      ],
       "allTime": [
         {
           "guid": "76561198014952506",
@@ -202,5 +209,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-06T16:10:37+00:00"
+  "aliveAt": "2026-09-06T16:12:45+00:00"
 }
