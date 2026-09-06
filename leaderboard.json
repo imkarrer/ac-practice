@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-06T03:03:03+00:00",
+  "updated": "2026-09-06T07:59:17+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
       "name": "Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
-      "sessionStarted": "2026-09-05T17:31:07+00:00",
+      "sessionStarted": "2026-09-06T07:59:17+00:00",
       "allTime": [
         {
           "guid": "76561199480521592",
@@ -144,47 +144,14 @@
           "at": "2026-09-03T02:13:19+00:00"
         }
       ],
-      "session": [
-        {
-          "guid": "76561199480521592",
-          "name": "theeguineapig",
-          "car": "lotus_elise_sc",
-          "carName": "Lotus Elise SC",
-          "ms": 80698,
-          "at": "2026-09-06T02:20:52+00:00"
-        },
-        {
-          "guid": "76561199480521592",
-          "name": "theeguineapig",
-          "car": "abarth_124_2016",
-          "carName": "Abarth 124 Spider EC P1",
-          "ms": 81589,
-          "at": "2026-09-05T23:26:09+00:00"
-        },
-        {
-          "guid": "76561199480521592",
-          "name": "theeguineapig",
-          "car": "tbb_toyota_gr86_premium",
-          "carName": "Toyota GR86 Premium",
-          "ms": 83019,
-          "at": "2026-09-06T02:00:52+00:00"
-        },
-        {
-          "guid": "76561199480521592",
-          "name": "theeguineapig",
-          "car": "bmw_m3_e30",
-          "carName": "BMW M3 E30",
-          "ms": 84453,
-          "at": "2026-09-06T02:42:26+00:00"
-        }
-      ],
+      "session": [],
       "online": []
     },
     "road-america": {
       "id": "road-america",
       "name": "Practice \u2014 Road America",
       "track": "road-america",
-      "sessionStarted": "2026-09-05T17:31:06+00:00",
+      "sessionStarted": "2026-09-06T07:59:16+00:00",
       "online": [],
       "allTime": [
         {
@@ -196,22 +163,13 @@
           "at": "2026-09-06T02:32:15+00:00"
         }
       ],
-      "session": [
-        {
-          "guid": "76561198014952506",
-          "name": "Von Stryker",
-          "car": "tbb_toyota_gr86_premium",
-          "carName": "Toyota GR86 Premium",
-          "ms": 168152,
-          "at": "2026-09-06T02:32:15+00:00"
-        }
-      ]
+      "session": []
     },
     "gingerman": {
       "id": "gingerman",
       "name": "Practice \u2014 Gingerman Raceway",
       "track": "gingerman",
-      "sessionStarted": "2026-09-05T17:31:05+00:00",
+      "sessionStarted": "2026-09-06T07:59:15+00:00",
       "online": [],
       "allTime": [
         {
@@ -223,18 +181,9 @@
           "at": "2026-09-06T02:58:34+00:00"
         }
       ],
-      "session": [
-        {
-          "guid": "76561198014952506",
-          "name": "Von Stryker",
-          "car": "ks_mazda_miata",
-          "carName": "Mazda Miata NA",
-          "ms": 169953,
-          "at": "2026-09-06T02:58:34+00:00"
-        }
-      ]
+      "session": []
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-06T03:03:03+00:00"
+  "aliveAt": "2026-09-06T07:59:17+00:00"
 }
