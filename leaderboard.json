@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T02:58:34+00:00",
+  "updated": "2026-09-06T03:03:03+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -212,14 +212,7 @@
       "name": "Practice \u2014 Gingerman Raceway",
       "track": "gingerman",
       "sessionStarted": "2026-09-05T17:31:05+00:00",
-      "online": [
-        {
-          "guid": "76561198014952506",
-          "name": "Von Stryker",
-          "car": "ks_mazda_miata",
-          "carName": "Mazda Miata NA"
-        }
-      ],
+      "online": [],
       "allTime": [
         {
           "guid": "76561198014952506",
@@ -243,5 +236,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-06T02:58:34+00:00"
+  "aliveAt": "2026-09-06T03:03:03+00:00"
 }
