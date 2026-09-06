@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06T02:22:29+00:00",
+  "updated": "2026-09-06T02:25:27+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -171,6 +171,12 @@
       "sessionStarted": "2026-09-05T17:31:06+00:00",
       "online": [
         {
+          "guid": "76561199480521592",
+          "name": "theeguineapig",
+          "car": "tbb_toyota_gr86_premium",
+          "carName": "Toyota GR86 Premium"
+        },
+        {
           "guid": "76561198014952506",
           "name": "Von Stryker",
           "car": "tbb_toyota_gr86_premium",
@@ -191,5 +197,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-06T02:22:29+00:00"
+  "aliveAt": "2026-09-06T02:25:27+00:00"
 }
