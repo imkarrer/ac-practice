@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-08T05:48:23+00:00",
+  "updated": "2026-09-08T07:59:15+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
       "name": "Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
-      "sessionStarted": "2026-09-08T05:01:05+00:00",
+      "sessionStarted": "2026-09-08T07:59:15+00:00",
       "allTime": [
         {
           "guid": "76561199441943807",
@@ -176,23 +176,14 @@
           "at": "2026-09-06T16:02:01+00:00"
         }
       ],
-      "session": [
-        {
-          "guid": "76561199441943807",
-          "name": "Herb",
-          "car": "some1_honda_nsx_1997_s1",
-          "carName": "Honda NSX NA2 S1 (1997)",
-          "ms": 87408,
-          "at": "2026-09-08T05:48:09+00:00"
-        }
-      ],
+      "session": [],
       "online": []
     },
     "road-america": {
       "id": "road-america",
       "name": "Practice \u2014 Road America",
       "track": "road-america",
-      "sessionStarted": "2026-09-08T05:01:03+00:00",
+      "sessionStarted": "2026-09-08T07:59:14+00:00",
       "online": [],
       "allTime": [
         {
@@ -210,7 +201,7 @@
       "id": "gingerman",
       "name": "Practice \u2014 Gingerman Raceway",
       "track": "gingerman",
-      "sessionStarted": "2026-09-08T05:01:03+00:00",
+      "sessionStarted": "2026-09-08T07:59:13+00:00",
       "online": [],
       "allTime": [
         {
@@ -226,5 +217,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-08T05:48:23+00:00"
+  "aliveAt": "2026-09-08T07:59:15+00:00"
 }
