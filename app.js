@@ -24,12 +24,23 @@ const RANK_HINTS = {
   all: "Every car on one list — fastest lap wins.",
   car: "Positions restart for each car, so a Civic isn't racing a 124.",
 };
-// Plugin pings ntfy every 60s and does not rewrite GitHub on each beat.
-// Fail-over has to be several missed beats, and first paint must wait for
-// ntfy before treating a stale leaderboard.json timestamp as "down".
-const HEALTH_BEAT_MS = 60 * 1000;
-const HEALTH_STALE_MS = 4 * 60 * 1000;
+// Sized off the two real cadences, not off a round number.
+//   ntfy heartbeat  - 300s (STATUS_HEARTBEAT_SEC), the most the anonymous
+//                     250-message/12h ntfy budget affords one publisher.
+//   leaderboard.json- republished only when the plugin has something to say,
+//                     plus a 10min floor so aliveAt cannot freeze.
+// Tolerate three missed beats before believing the box is gone. The old 4min
+// window was shorter than the publish cadence itself, so ordinary quiet looked
+// identical to an outage.
+const HEALTH_BEAT_MS = 5 * 60 * 1000;
+const HEALTH_STALE_MS = 3 * HEALTH_BEAT_MS + 60 * 1000;
 const HEALTH_GRACE_MS = 90 * 1000;
+// Hysteresis: staleness must persist before the banner appears; recovery is
+// immediate. Held as a timestamp, not a strike count, so it stays correct
+// however many times boardHealth() is consulted per paint.
+const HEALTH_DOWN_HOLD_MS = 60 * 1000;
+const HEALTH_POLL_MS = 60 * 1000;
+let staleSince = 0;
 
 let lastBoard = null;
 let lastAliveAt = 0;
@@ -243,11 +254,19 @@ function boardHealth(data) {
     };
   }
   const fresh = newestStamp(data);
-  if (fresh && Date.now() - fresh < HEALTH_STALE_MS) {
+  const now = Date.now();
+  if (fresh && now - fresh < HEALTH_STALE_MS) {
+    staleSince = 0;
     return { state: "up", label: "Online", title: "", message: "" };
   }
-  if (Date.now() - healthWatchStarted < HEALTH_GRACE_MS) {
+  if (!staleSince) staleSince = now;
+  if (now - healthWatchStarted < HEALTH_GRACE_MS) {
     return { state: "checking", label: "Checking…", title: "", message: "" };
+  }
+  // One dropped frame is not an outage: hold last-known-good until the signal
+  // has been missing across several ticks.
+  if (now - staleSince < HEALTH_DOWN_HOLD_MS) {
+    return { state: "up", label: "Online", title: "", message: "" };
   }
   return {
     state: "down",
@@ -337,7 +356,7 @@ function eventsUrl() {
 function eventsPollUrl() {
   const sse = eventsUrl();
   if (!sse) return "";
-  return sse.replace(/\/sse\/?$/, "") + "/json?poll=1&since=10m";
+  return sse.replace(/\/sse\/?$/, "") + "/json?poll=1&since=30m";
 }
 
 async function loadBoard() {
@@ -414,6 +433,14 @@ function watchStatusEvents() {
     source.addEventListener("message", function (event) {
       noteEvent(event && event.data);
     });
+    // EventSource retries on its own, but a tab that was backgrounded or
+    // suspended comes back with a socket that is open and permanently silent.
+    // Tear it down and rebuild rather than trusting it.
+    source.addEventListener("error", function () {
+      if (source.readyState !== 2) return;
+      try { source.close(); } catch (e) {}
+      setTimeout(watchStatusEvents, 5000);
+    });
   } catch (err) {}
 }
 
@@ -423,7 +450,11 @@ document.querySelectorAll("[data-rank]").forEach(function (btn) {
   });
 });
 document.addEventListener("visibilitychange", function () {
-  if (!document.hidden) loadBoard();
+  if (document.hidden) return;
+  loadBoard();
+  // SSE is usually dead after a background stint; recover liveness from the
+  // JSON endpoint instead of waiting out the staleness window.
+  pollRecentEvents();
 });
 syncRankToggle();
 renderHealth({});
@@ -431,5 +462,8 @@ loadBoard();
 pollRecentEvents();
 watchStatusEvents();
 setInterval(loadBoard, 15000);
+// This ran once at startup, which left SSE as the page's only liveness input
+// for the rest of its life. A dropped stream then never recovered.
+setInterval(pollRecentEvents, HEALTH_POLL_MS);
 setInterval(function () { renderHealth(lastBoard || {}); }, 15000);
 setTimeout(function () { renderHealth(lastBoard || {}); }, HEALTH_GRACE_MS);
