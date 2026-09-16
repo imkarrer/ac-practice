@@ -216,7 +216,6 @@
       "session": []
     }
   },
-  "status": "maintenance",
-  "aliveAt": "2026-09-16T04:19:45+00:00",
-  "statusMessage": "Practice servers are restarting."
+  "status": "up",
+  "aliveAt": "2026-09-16T04:23:57+00:00"
 }
