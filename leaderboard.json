@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-19T23:48:14+00:00",
+  "updated": "2026-09-20T07:59:27+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
       "name": "Practice \u2014 Blackhawk Farms",
       "track": "blackhawk",
-      "sessionStarted": "2026-09-19T08:00:17+00:00",
+      "sessionStarted": "2026-09-20T07:59:27+00:00",
       "allTime": [
         {
           "guid": "76561199441943807",
@@ -176,23 +176,14 @@
           "at": "2026-09-06T16:02:01+00:00"
         }
       ],
-      "session": [
-        {
-          "guid": "76561199441943807",
-          "name": "Herb",
-          "car": "bmw_m3_e30",
-          "carName": "BMW M3 E30",
-          "ms": 84493,
-          "at": "2026-09-19T23:44:42+00:00"
-        }
-      ],
+      "session": [],
       "online": []
     },
     "road-america": {
       "id": "road-america",
       "name": "Practice \u2014 Road America",
       "track": "road-america",
-      "sessionStarted": "2026-09-19T08:00:15+00:00",
+      "sessionStarted": "2026-09-20T07:59:25+00:00",
       "online": [],
       "allTime": [
         {
@@ -210,7 +201,7 @@
       "id": "gingerman",
       "name": "Practice \u2014 Gingerman Raceway",
       "track": "gingerman",
-      "sessionStarted": "2026-09-19T08:00:15+00:00",
+      "sessionStarted": "2026-09-20T07:59:25+00:00",
       "online": [],
       "allTime": [
         {
@@ -226,5 +217,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-09-20T07:49:01+00:00"
+  "aliveAt": "2026-09-20T07:59:27+00:00"
 }
