@@ -701,3 +701,12 @@ ul.howto-plain code {
     gap: 0.2rem;
   }
 }
+
+.site-foot {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(139, 141, 150, 0.25);
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
