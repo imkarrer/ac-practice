@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T01:52:31+00:00",
+  "updated": "2026-11-09T02:12:13+00:00",
   "lobbies": {
     "blackhawk": {
       "id": "blackhawk",
@@ -177,14 +177,7 @@
         }
       ],
       "session": [],
-      "online": [
-        {
-          "guid": "76561198370934168",
-          "name": "SUPINUS",
-          "car": "bmw_m3_e30",
-          "carName": "BMW M3 E30"
-        }
-      ]
+      "online": []
     },
     "road-america": {
       "id": "road-america",
@@ -232,5 +225,5 @@
     }
   },
   "status": "up",
-  "aliveAt": "2026-11-09T02:03:53+00:00"
+  "aliveAt": "2026-11-09T02:12:13+00:00"
 }
